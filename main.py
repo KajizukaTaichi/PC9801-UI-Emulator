@@ -68,8 +68,8 @@ def main():
             try:
                 os.chdir(new_directory)
                 continue
-            except FileNotFoundError:
-                print("指定されたパスが見つかりません。")
+            except:
+                pass
 
         result = subprocess.run(command, shell=True, capture_output=True, text=True)
         display_text(result.stderr)
