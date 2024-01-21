@@ -4,9 +4,6 @@ import os
 import vlc
 
 def play_pipo_sound():
-    player = vlc.MediaPlayer("https://s88.123apps.com/aextractor/d/s88IGU1ERpiBMJd_mp4_J1ZAT8s6.mp3")
-    player.play()
-
     player = vlc.MediaPlayer("https://upload.wikimedia.org/wikipedia/commons/f/fb/NEC_PC-9801VX_ITF_beep_sound.ogg")
     player.play()
 
