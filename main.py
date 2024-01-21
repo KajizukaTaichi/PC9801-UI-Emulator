@@ -72,7 +72,7 @@ def main():
                 continue
             except:
                 pass
-            
+
         elif "mouse" in command.lower():
             if "/r" in command.lower():
                 display_text("マウスドライバの常駐を解除しました")
@@ -81,8 +81,8 @@ def main():
             continue
 
         result: CompletedProcess = run(command, shell=True, capture_output=True, text=True)
-        display_text(result.stderr)
-        display_text(result.stdout)
+        display_text(str(result.stderr))
+        display_text(str(result.stdout))
 
 if __name__ == "__main__":
     main()
