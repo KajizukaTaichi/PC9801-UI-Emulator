@@ -4,6 +4,9 @@ import os
 import vlc
 
 def play_pipo_sound():
+    player = vlc.MediaPlayer("seek.mp3")
+    player.play()
+    
     player = vlc.MediaPlayer("https://upload.wikimedia.org/wikipedia/commons/f/fb/NEC_PC-9801VX_ITF_beep_sound.ogg")
     player.play()
 
@@ -56,6 +59,7 @@ def main():
     animated_memory_check()
     display_title()
 
+    os.chdir("C:\\")
     while True:
         current_path = os.getcwd()
         command = input(f"\n{current_path}> ")
