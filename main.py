@@ -44,8 +44,8 @@ def display_title():
         "KKCFUNC が組み込まれました. \n\n"
         "    AIかな漢字変換が使用可能です\n"
         "    辞書は、ドライプA:の NECAI.SYS です\n"
-        "To Load Mouse Driver, Type MOLISE.\n"
-        "To Unload Mouse Driver , Type MOLISE /R."
+        "To Load Mouse Driver, Type MOUSE.\n"
+        "To Unload Mouse Driver , Type MOUSE /R."
     ]
 
     display_text(titles[0])
@@ -72,11 +72,15 @@ def main():
                 continue
             except:
                 pass
-
-        result: CompletedProcess = run(command, shell=True, capture_output=True, text=True)
-        display_text(result.stderr)
-        display_text(result.stdout)
-
+        elif "mouse" in command.lower():
+            if "/r" in command.lower():
+                display_text("マウスドライバの常駐を解除しました")
+            else: 
+                display_text("マウスドライバが常駐しました")
+        else:
+            result: CompletedProcess = run(command, shell=True, capture_output=True, text=True)
+            display_text(result.stderr)
+            display_text(result.stdout)
 
 if __name__ == "__main__":
     main()
