@@ -55,6 +55,7 @@ def display_title():
     sleep(1)
 
 def main():
+    sleep(2)
     play_pipo_sound()
     animated_memory_check()
     display_title()
