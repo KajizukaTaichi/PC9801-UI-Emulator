@@ -1,5 +1,5 @@
 from time import sleep
-import subprocess
+from subprocess import run, CompletedProcess
 import os
 import vlc
 
@@ -68,9 +68,10 @@ def main():
             except:
                 pass
 
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        result: CompletedProcess = run(command, shell=True, capture_output=True, text=True)
         display_text(result.stderr)
         display_text(result.stdout)
+
 
 if __name__ == "__main__":
     main()
