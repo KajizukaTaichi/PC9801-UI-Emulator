@@ -27,7 +27,7 @@ def animated_memory_check():
         print(frame, end="")
         sleep(0.008) if i >= 640 else sleep(0.005)
     print(" OK", end="\r")
-    sleep(5)
+    sleep(4)
 
 def display_title():
     titles = [
@@ -49,7 +49,7 @@ def display_title():
     ]
 
     display_text(titles[0])
-    sleep(3)
+    sleep(2)
 
     display_text(titles[1])
     sleep(1)
